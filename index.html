@@ -3,117 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HAMSONT</title>
+  <title>Hamsont</title>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #0f172a;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
       color: #e2e8f0;
-      line-height: 1.6;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .hero {
+      text-align: center;
       padding: 60px 20px;
     }
 
     h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-      color: #ffffff;
+      font-size: 60px;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    .tagline {
+      font-size: 20px;
+      color: #94a3b8;
+      margin-top: 15px;
+    }
+
+    .subtext {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #cbd5e1;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section {
+      margin-top: 80px;
     }
 
     h2 {
       color: #38bdf8;
-      margin-top: 40px;
+      margin-bottom: 20px;
+      font-size: 28px;
     }
 
-    .tagline {
-      font-size: 18px;
-      color: #94a3b8;
-      margin-bottom: 40px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: #1e293b;
+      background: rgba(30, 41, 59, 0.7);
       padding: 20px;
-      border-radius: 12px;
-      margin-top: 20px;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      backdrop-filter: blur(10px);
     }
 
-    ul {
-      padding-left: 20px;
+    .card h3 {
+      margin-top: 0;
+      color: #ffffff;
     }
 
     .footer {
-      margin-top: 60px;
-      font-size: 14px;
-      color: #64748b;
       text-align: center;
+      margin-top: 100px;
+      color: #64748b;
+      font-size: 14px;
     }
 
     a {
       color: #38bdf8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
+
   <div class="container">
 
-    <h1>HAMSONT</h1>
-    <div class="tagline">
-      AI-powered software tools for small business operations
+    <!-- HERO -->
+    <div class="hero">
+      <h1>HAMS0NT</h1>
+      <div class="tagline">AI-powered software tools for modern small businesses</div>
+      <div class="subtext">
+        We build simple, intelligent systems that help businesses manage customers,
+        automate workflows, and improve day-to-day operations without complexity.
+      </div>
     </div>
 
-    <div class="card">
-      <p>
-        Hamsont builds simple AI-driven software systems that help small businesses manage customers,
-        improve follow-ups, and automate everyday workflows.
-      </p>
+    <!-- FEATURES -->
+    <div class="section">
+      <h2>What we build</h2>
+      <div class="grid">
 
-      <p>
-        Our focus is reducing manual admin work and helping businesses stay organised, responsive, and efficient.
-      </p>
+        <div class="card">
+          <h3>Customer Systems</h3>
+          <p>Track leads, manage follow-ups, and never lose a customer again.</p>
+        </div>
+
+        <div class="card">
+          <h3>AI Communication</h3>
+          <p>Automate replies, booking requests, and customer interactions.</p>
+        </div>
+
+        <div class="card">
+          <h3>Workflow Automation</h3>
+          <p>Turn repetitive business tasks into automated systems.</p>
+        </div>
+
+        <div class="card">
+          <h3>Business Intelligence</h3>
+          <p>Understand what’s happening in your business in real time.</p>
+        </div>
+
+      </div>
     </div>
 
-    <h2>What we build</h2>
-    <div class="card">
-      <ul>
-        <li>Customer follow-up and lead tracking systems</li>
-        <li>AI-assisted communication tools</li>
-        <li>Workflow automation systems</li>
-        <li>Internal business organisation tools</li>
-      </ul>
+    <!-- WHO IT'S FOR -->
+    <div class="section">
+      <h2>Who it’s for</h2>
+      <div class="grid">
+
+        <div class="card">Local service businesses</div>
+        <div class="card">Freelancers & consultants</div>
+        <div class="card">Agencies</div>
+        <div class="card">Appointment-based businesses</div>
+
+      </div>
     </div>
 
-    <h2>Who it’s for</h2>
-    <div class="card">
-      <ul>
-        <li>Local service businesses</li>
-        <li>Agencies and freelancers</li>
-        <li>Consultants</li>
-        <li>Appointment-based businesses</li>
-      </ul>
-    </div>
-
-    <h2>Our goal</h2>
-    <div class="card">
-      To help small businesses operate more efficiently by turning repetitive work into simple automated systems.
-    </div>
-
-    <h2>Contact</h2>
-    <div class="card">
-      Email: <a href="mailto:hamsont@gmail.com">hamsont@gmail.com</a>
+    <!-- CONTACT -->
+    <div class="section">
+      <h2>Contact</h2>
+      <div class="card">
+        Email: <a href="mailto:hamsont@gmail.com">hamsont@gmail.com</a>
+      </div>
     </div>
 
     <div class="footer">
-      © 2026 Hamsont. All rights reserved.
+      © 2026 Hamsont. Built for simplicity and clarity.
     </div>
 
   </div>
+
 </body>
 </html>
