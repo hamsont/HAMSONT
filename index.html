@@ -16,6 +16,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Animated background */
 .bg {
   position: fixed;
   width: 200%;
@@ -50,13 +51,17 @@ h1 {
   margin: 0;
   font-weight: 800;
   letter-spacing: 3px;
+  white-space: nowrap;
+  word-break: normal;
 }
 
 .glow {
   background: linear-gradient(90deg, #38bdf8, #6366f1, #22c55e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 40px rgba(56,189,248,0.3);
+  display: inline-block;
+  padding: 0 5px;
+  text-shadow: 0 0 40px rgba(56,189,248,0.25);
 }
 
 .tagline {
@@ -121,7 +126,7 @@ h2 {
   border-color: #38bdf8;
 }
 
-/* MOCK UI BOX */
+/* MOCK UI */
 .mock {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
@@ -129,18 +134,6 @@ h2 {
   padding: 20px;
   margin-top: 20px;
   position: relative;
-  overflow: hidden;
-}
-
-.mock::before {
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, #38bdf8, transparent);
-  top: -80px;
-  right: -80px;
-  opacity: 0.3;
 }
 
 .bar {
@@ -159,6 +152,24 @@ footer {
   margin-top: 120px;
   color: #64748b;
 }
+
+/* 🔥 MOBILE FIX */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 44px;
+    letter-spacing: 2px;
+    white-space: normal;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+
+  .subtext {
+    font-size: 14px;
+  }
+}
+
 a { color: #38bdf8; }
 </style>
 </head>
@@ -172,16 +183,16 @@ a { color: #38bdf8; }
   <!-- HERO -->
   <div class="hero">
     <h1 class="glow">HAMS0NT</h1>
-    <div class="tagline">AI systems that run the operational layer of modern businesses</div>
+    <div class="tagline">AI systems that power modern business operations</div>
     <div class="subtext">
-      We build intelligent tools that handle customers, automate workflows,
-      and remove operational chaos from growing businesses.
+      We build intelligent software that handles customers,
+      automates workflows, and removes operational chaos from growing businesses.
     </div>
 
     <a class="button" href="mailto:hamsont@gmail.com">Contact Hamsont</a>
   </div>
 
-  <!-- MOCK PRODUCT PREVIEW -->
+  <!-- LIVE PREVIEW -->
   <div class="section">
     <h2>Live System Preview</h2>
 
@@ -190,7 +201,7 @@ a { color: #38bdf8; }
       <div class="bar short"></div>
       <div class="bar tiny"></div>
       <p style="color:#94a3b8;margin-top:15px;">
-        Customer Memory System — tracking leads, conversations, and follow-ups in real time.
+        Customer Memory Engine — tracking leads, conversations, and follow-ups in real time.
       </p>
     </div>
   </div>
@@ -199,12 +210,10 @@ a { color: #38bdf8; }
   <div class="section">
     <h2>Core Systems</h2>
     <div class="grid">
-
       <div class="card">🧠 Customer Memory Engine</div>
       <div class="card">⚡ AI Reception Layer</div>
       <div class="card">🔄 Workflow Automation</div>
       <div class="card">📊 Business Intelligence</div>
-
     </div>
   </div>
 
