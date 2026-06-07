@@ -12,26 +12,25 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   color: #e2e8f0;
-  background: #0a0f1c;
+  background: #070b14;
   overflow-x: hidden;
 }
 
-/* Animated background */
 .bg {
   position: fixed;
   width: 200%;
   height: 200%;
   background: radial-gradient(circle at 20% 20%, #38bdf8 0%, transparent 30%),
-              radial-gradient(circle at 80% 30%, #6366f1 0%, transparent 35%),
-              radial-gradient(circle at 40% 80%, #22c55e 0%, transparent 30%);
-  animation: move 15s infinite alternate;
+              radial-gradient(circle at 70% 30%, #6366f1 0%, transparent 35%),
+              radial-gradient(circle at 50% 80%, #22c55e 0%, transparent 30%);
+  animation: float 18s infinite alternate;
   opacity: 0.25;
   z-index: -1;
 }
 
-@keyframes move {
+@keyframes float {
   0% { transform: translate(0,0); }
-  100% { transform: translate(-10%, -10%); }
+  100% { transform: translate(-8%, -6%); }
 }
 
 .container {
@@ -43,20 +42,21 @@ body {
 /* HERO */
 .hero {
   text-align: center;
-  padding: 100px 20px 60px;
+  padding: 100px 20px 40px;
 }
 
 h1 {
-  font-size: 72px;
+  font-size: 76px;
   margin: 0;
-  letter-spacing: 4px;
   font-weight: 800;
+  letter-spacing: 3px;
 }
 
-.gradient-text {
+.glow {
   background: linear-gradient(90deg, #38bdf8, #6366f1, #22c55e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(56,189,248,0.3);
 }
 
 .tagline {
@@ -69,7 +69,24 @@ h1 {
   max-width: 700px;
   margin: 20px auto;
   color: #cbd5e1;
-  font-size: 16px;
+}
+
+/* CTA BUTTON */
+.button {
+  margin-top: 30px;
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(56,189,248,0.4);
 }
 
 /* SECTIONS */
@@ -78,15 +95,14 @@ h1 {
 }
 
 h2 {
-  font-size: 26px;
-  margin-bottom: 20px;
   color: #38bdf8;
+  margin-bottom: 20px;
 }
 
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
 
@@ -97,27 +113,52 @@ h2 {
   border-radius: 16px;
   padding: 20px;
   backdrop-filter: blur(12px);
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(56,189,248,0.6);
-  box-shadow: 0 10px 30px rgba(56,189,248,0.15);
+  transform: translateY(-6px);
+  border-color: #38bdf8;
 }
 
-.card h3 {
-  margin-top: 0;
+/* MOCK UI BOX */
+.mock {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* FOOTER */
+.mock::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #38bdf8, transparent);
+  top: -80px;
+  right: -80px;
+  opacity: 0.3;
+}
+
+.bar {
+  height: 10px;
+  width: 60%;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.bar.short { width: 40%; }
+.bar.tiny { width: 25%; }
+
 footer {
   text-align: center;
   margin-top: 120px;
   color: #64748b;
-  font-size: 14px;
 }
-
 a { color: #38bdf8; }
 </style>
 </head>
@@ -130,11 +171,27 @@ a { color: #38bdf8; }
 
   <!-- HERO -->
   <div class="hero">
-    <h1 class="gradient-text">HAMS0NT</h1>
-    <div class="tagline">AI systems for modern business operations</div>
+    <h1 class="glow">HAMS0NT</h1>
+    <div class="tagline">AI systems that run the operational layer of modern businesses</div>
     <div class="subtext">
-      We design intelligent software that helps businesses manage customers,
-      automate workflows, and operate with clarity instead of chaos.
+      We build intelligent tools that handle customers, automate workflows,
+      and remove operational chaos from growing businesses.
+    </div>
+
+    <a class="button" href="mailto:hamsont@gmail.com">Contact Hamsont</a>
+  </div>
+
+  <!-- MOCK PRODUCT PREVIEW -->
+  <div class="section">
+    <h2>Live System Preview</h2>
+
+    <div class="mock">
+      <div class="bar"></div>
+      <div class="bar short"></div>
+      <div class="bar tiny"></div>
+      <p style="color:#94a3b8;margin-top:15px;">
+        Customer Memory System — tracking leads, conversations, and follow-ups in real time.
+      </p>
     </div>
   </div>
 
@@ -143,25 +200,10 @@ a { color: #38bdf8; }
     <h2>Core Systems</h2>
     <div class="grid">
 
-      <div class="card">
-        <h3>Customer Memory</h3>
-        <p>Never lose a lead again. Track every conversation and follow-up automatically.</p>
-      </div>
-
-      <div class="card">
-        <h3>AI Reception Layer</h3>
-        <p>Respond to customers, book appointments, and handle enquiries instantly.</p>
-      </div>
-
-      <div class="card">
-        <h3>Workflow Engine</h3>
-        <p>Turn repetitive business tasks into automated intelligent flows.</p>
-      </div>
-
-      <div class="card">
-        <h3>Business Intelligence</h3>
-        <p>Understand what’s happening in your business in real time.</p>
-      </div>
+      <div class="card">🧠 Customer Memory Engine</div>
+      <div class="card">⚡ AI Reception Layer</div>
+      <div class="card">🔄 Workflow Automation</div>
+      <div class="card">📊 Business Intelligence</div>
 
     </div>
   </div>
@@ -173,20 +215,12 @@ a { color: #38bdf8; }
       <div class="card">Service Businesses</div>
       <div class="card">Agencies</div>
       <div class="card">Freelancers</div>
-      <div class="card">Growing Teams</div>
-    </div>
-  </div>
-
-  <!-- CONTACT -->
-  <div class="section">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: <a href="mailto:hamsont@gmail.com">hamsont@gmail.com</a></p>
+      <div class="card">Scaling Teams</div>
     </div>
   </div>
 
   <footer>
-    © 2026 Hamsont — Systems that bring clarity to business.
+    © 2026 Hamsont — Building operational intelligence for modern business.
   </footer>
 
 </div>
